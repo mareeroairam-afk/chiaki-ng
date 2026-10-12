@@ -1,4 +1,8 @@
-name: Build APK
+      - name: Build APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug -DProtobuf_PROTOC_EXECUTABLE=/usr/bin/protoc
 on: workflow_dispatch
 jobs:
   build:
