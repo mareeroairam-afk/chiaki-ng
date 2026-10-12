@@ -17,7 +17,7 @@ jobs:
         run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
       - name: Install NDK and CMake
-        run: $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose "ndk;28.2.13676358" "cmake;3.22.1"
+        run: $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --verbose "ndk;25.1.8937393" "cmake;3.22.1"
 
       - name: Install native dependencies
         run: |
@@ -36,4 +36,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: apk
-          path: android/app/build/outputs/apk/debug/*.apk
+          path: android/app/build/outputs/apk/de
