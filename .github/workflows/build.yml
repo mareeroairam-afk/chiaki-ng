@@ -12,7 +12,10 @@ jobs:
           distribution: temurin
           java-version: 17
       - uses: android-actions/setup-android@v3
-      - run: sdkmanager "ndk;28.2.13676358" "cmake;3.22.1"
+      - name: Accept licenses
+        run: yes | sdkmanager --licenses || true
+      - name: Install NDK and CMake
+        run: sdkmanager --verbose "ndk;28.2.13676358" "cmake;3.22.1"
       - run: pip install protobuf
       - run: |
           cd android
